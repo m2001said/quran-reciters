@@ -2,22 +2,27 @@
 :root {
   --white: #ffffff;
   --gold: #ffbf5e;
+  --gold-dark: #9c763c;
   --light-gold: #f5f2de;
   --black: #000000;
 }
+
 * {
   margin: 0;
   padding: 0;
 }
+
 .flex,
 .flex-col {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .flex-col {
   flex-direction: column;
 }
+
 /* ----------styles---------- */
 body {
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), url("/images/black-background2.jpg"); */
@@ -26,10 +31,16 @@ body {
   background-size: contain;
   background-size: 100vw 100vh;
   color: var(--white);
+  font-family: "Cairo", sans-serif;
+  direction: rtl;
 }
+
 .main-container {
   max-width: 1400px;
+  padding: 1rem;
+  margin: 2rem auto;
 }
+
 .lamb {
   position: fixed;
   width: 40px;
@@ -37,10 +48,12 @@ body {
   top: -20px;
   animation: rotate-right-left 4s linear infinite both;
 }
+
 .lamb-small {
   width: 30px;
   right: 50px;
 }
+
 .masjed {
   position: fixed;
   max-width: 1000px;
@@ -48,6 +61,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
+
 .star {
   position: fixed;
   width: 200px;
@@ -55,45 +69,204 @@ body {
   left: -100px;
   animation: rotate-clock-wise 10s linear infinite both;
 }
+
 .star-medium {
   width: 100px;
   top: 7vh;
   left: -50px;
   animation: rotate-counter-clock-wise 10s linear infinite both;
 }
+
 .star-small {
   width: 60px;
   top: 14vh;
   left: 50px;
   animation: rotate-clock-wise 10s linear infinite both;
 }
+/* ------------------ */
+.main-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.main-content {
+  max-width: 1000px;
+  width: 100%;
+  justify-content: space-between;
+  gap: 100px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.choose-reciters {
+  width: 100%;
+  max-width: 300px;
+  font-size: 1.5rem;
+}
+.choose-reciters-title {
+  width: 80%;
+  font-weight: 700;
+  background-color: var(--gold);
+  color: var(--black);
+  text-align: center;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.choose-reciters-names {
+  width: 100%;
+  border: solid 2px var(--gold);
+  padding: 5px 10px;
+  border-radius: 10px;
+  align-items: flex-start;
+}
 
+label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  background-color: var(--gold);
+  border-radius: 4px;
+  position: relative;
+}
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* Style the custom checkbox when checked */
+input[type="checkbox"]:checked + .custom-checkbox::before {
+  content: "\2713";
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--black);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.choices {
+  max-width: 600px;
+  width: 100%;
+  gap: 20px;
+}
+.choices-inputs {
+  justify-content: space-around;
+  gap: 10px;
+  width: 100%;
+}
+audio {
+  width: 500px;
+}
+.buttons-container {
+  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+}
+.buttons {
+  gap: 15px;
+  font-size: 20px;
+}
+button {
+  background-color: var(--gold);
+  border: none;
+  font-size: 1.2rem;
+  padding: 3px 7px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.choices-reciter {
+  font-size: 1.5rem;
+  font-weight: 400;
+  align-self: start;
+}
+.custom-select {
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+
+.custom-select input {
+  width: 100px;
+  text-align: center;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--gold);
+  font-size: 1.2rem;
+}
+.custom-select input::placeholder {
+  font-size: 1rem;
+  color: var(--gold-dark);
+}
+
+.custom-select ul {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 100%;
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  background-color: #fff;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.custom-select ul li {
+  padding: 5px 10px;
+  cursor: pointer;
+  color: var(--gold-dark);
+  font-weight: 700;
+}
+
+.custom-select ul li:hover {
+  background-color: #f2f2f2;
+}
+
+/* -----------keyframes for animation--------------------- */
 @keyframes rotate-clock-wise {
   0% {
     -webkit-transform: rotate(0);
     transform: rotate(0);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
+
 @keyframes rotate-counter-clock-wise {
   0% {
     -webkit-transform: rotate(0);
     transform: rotate(0);
   }
+
   100% {
     -webkit-transform: rotate(-360deg);
     transform: rotate(-360deg);
   }
 }
+
 @keyframes rotate-right-left {
   0%,
   100% {
-    transform: rotate(2deg);
+    transform: rotate(3deg);
   }
+
   50% {
-    transform: rotate(-2deg);
+    transform: rotate(-3deg);
   }
 }

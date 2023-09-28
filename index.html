@@ -10,7 +10,12 @@
     <title>القرآن</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="icon" href="./image/title-icon.svg" type="image/svg+xml" />
-    <style></style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <img src="./images/lamb-decoration.svg" alt="lamp" class="lamb" />
@@ -19,6 +24,98 @@
     <img src="./images/star-decoration.svg" alt="star" class="star" />
     <img src="./images/star-decoration.svg" alt="star" class="star star-medium" />
     <img src="./images/star-decoration.svg" alt="star" class="star star-small" />
-    <div class="main-container"></div>
+    <div class="main-container flex-col">
+      <!-- main title -->
+      <p class="main-title">القرآن الكريم</p>
+
+      <!-- main box -->
+      <div class="flex main-content">
+        <!-- choose reciters box -->
+        <div class="flex-col choose-reciters">
+          <p class="choose-reciters-title">اختر الشيوخ</p>
+          <div class="flex-col choose-reciters-names">
+            <label>
+              <input type="checkbox" />
+              <span class="custom-checkbox"></span>
+              محمد احمد
+            </label>
+
+            <label>
+              <input type="checkbox" />
+              <span class="custom-checkbox"></span>
+              ماهر المعيقلي
+            </label>
+
+            <label>
+              <input type="checkbox" />
+              <span class="custom-checkbox"></span>
+              اختر الشيوخ
+            </label>
+
+            <label>
+              <input type="checkbox" />
+              <span class="custom-checkbox"></span>
+              اختر الشيوخ
+            </label>
+          </div>
+        </div>
+
+        <!-- play quran  -->
+        <div class="flex-col choices">
+          <div class="choices-inputs flex">
+            <div class="custom-select">
+              <label for="surahs">اختر السورة</label>
+              <input type="text" id="surahs" placeholder="اختر السورة" />
+              <ul id="surahs-options">
+                <li data-value="البقرة">البقرة</li>
+                <li data-value="ال عمران">ال عمران</li>
+                <li data-value="النساء">النساء</li>
+              </ul>
+            </div>
+
+            <div class="custom-select">
+              <label for="verses-from">من الآية</label>
+              <input type="number" id="verses-from" placeholder="من الآية" />
+              <ul id="verses-from-options">
+                <li data-value="1">آية 1</li>
+                <li data-value="2">آية 2</li>
+                <li data-value="3">آية 3</li>
+              </ul>
+            </div>
+
+            <div class="custom-select">
+              <label for="verses-to">إلي الآية</label>
+              <input type="number" id="verses-to" placeholder="إلي الآية" />
+              <ul id="verses-to-options">
+                <li data-value="1">آية 1</li>
+                <li data-value="2">آية 2</li>
+                <li data-value="3">آية 3</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="choices-reciter">
+            <span>القارئ</span>
+            <span>عبدالباسط عبدالصمد</span>
+          </p>
+          <audio controls src="/assets/nashid.mp3"></audio>
+
+          <div class="flex buttons-container">
+            <div class="buttons flex">
+              <button>&#129146;</button>
+              <p>الشيخ</p>
+              <button>&#129144;</button>
+            </div>
+
+            <div class="buttons flex">
+              <button>&#129146;</button>
+              <p>الآية</p>
+              <button>&#129144;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
