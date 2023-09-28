@@ -33,31 +33,7 @@
         <!-- choose reciters box -->
         <div class="flex-col choose-reciters">
           <p class="choose-reciters-title">اختر الشيوخ</p>
-          <div class="flex-col choose-reciters-names">
-            <label>
-              <input type="checkbox" />
-              <span class="custom-checkbox"></span>
-              محمد احمد
-            </label>
-
-            <label>
-              <input type="checkbox" />
-              <span class="custom-checkbox"></span>
-              ماهر المعيقلي
-            </label>
-
-            <label>
-              <input type="checkbox" />
-              <span class="custom-checkbox"></span>
-              اختر الشيوخ
-            </label>
-
-            <label>
-              <input type="checkbox" />
-              <span class="custom-checkbox"></span>
-              اختر الشيوخ
-            </label>
-          </div>
+          <div class="flex-col choose-reciters-names"></div>
         </div>
 
         <!-- play quran  -->
@@ -70,6 +46,16 @@
                 <li data-value="البقرة">البقرة</li>
                 <li data-value="ال عمران">ال عمران</li>
                 <li data-value="النساء">النساء</li>
+              </ul>
+            </div>
+
+            <div class="custom-select">
+              <label for="repeat-numbers">عدد مرات التكرار</label>
+              <input type="number" id="repeat-numbers" placeholder="إلي الآية" />
+              <ul id="verses-to-options">
+                <li data-value="1">1</li>
+                <li data-value="2">2</li>
+                <li data-value="3">3</li>
               </ul>
             </div>
 

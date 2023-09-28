@@ -25,3 +25,22 @@ function setupCustomSelect(inputId, optionsId) {
 setupCustomSelect("surahs", "surahs-options");
 setupCustomSelect("verses-from", "verses-from-options");
 setupCustomSelect("verses-to", "verses-to-options");
+
+const express = require("express");
+const fetch = require("node-fetch");
+const app = express();
+
+app.get("/api", async (req, res) => {
+  try {
+    const response = await fetch("https://api.quran.com/api/v4/resources/chapter_reciters");
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    res.status(500).json({ error: "An error occurred" });
+  }
+});
+
+app.listen(3000, () => {
+  console.log("Server started on port 3000");
+});

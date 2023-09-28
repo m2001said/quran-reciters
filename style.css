@@ -154,44 +154,24 @@ input[type="checkbox"]:checked + .custom-checkbox::before {
   max-width: 600px;
   width: 100%;
   gap: 20px;
+  flex-wrap: wrap;
 }
 .choices-inputs {
-  justify-content: space-around;
-  gap: 10px;
-  width: 100%;
-}
-audio {
-  width: 500px;
-}
-.buttons-container {
-  gap: 20px;
   justify-content: space-between;
+  gap: 50px;
   width: 100%;
+  flex-wrap: wrap;
 }
-.buttons {
-  gap: 15px;
-  font-size: 20px;
-}
-button {
-  background-color: var(--gold);
-  border: none;
-  font-size: 1.2rem;
-  padding: 3px 7px;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-}
-.choices-reciter {
-  font-size: 1.5rem;
-  font-weight: 400;
-  align-self: start;
-}
+
 .custom-select {
   position: relative;
   display: flex;
   gap: 10px;
 }
 
+.custom-select label {
+  white-space: nowrap;
+}
 .custom-select input {
   width: 100px;
   text-align: center;
@@ -233,6 +213,36 @@ button {
 
 .custom-select ul li:hover {
   background-color: #f2f2f2;
+}
+
+/* ------------audio and buttons */
+audio {
+  width: 500px;
+}
+.buttons {
+  gap: 15px;
+  font-size: 20px;
+}
+
+.buttons-container {
+  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.choices-reciter {
+  font-size: 1.5rem;
+  font-weight: 400;
+  align-self: start;
+}
+button {
+  background-color: var(--gold);
+  border: none;
+  font-size: 1.2rem;
+  padding: 3px 7px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 /* -----------keyframes for animation--------------------- */
