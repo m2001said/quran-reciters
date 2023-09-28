@@ -20,6 +20,7 @@
 }
 /* ----------styles---------- */
 body {
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), url("/images/black-background2.jpg"); */
   background-image: url("/images/black-background1.jpg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -33,12 +34,12 @@ body {
   position: fixed;
   width: 40px;
   right: 5px;
-  top: 0;
+  top: -20px;
+  animation: rotate-right-left 4s linear infinite both;
 }
 .lamb-small {
   width: 30px;
   right: 50px;
-  top: 0;
 }
 .masjed {
   position: fixed;
@@ -85,5 +86,14 @@ body {
   100% {
     -webkit-transform: rotate(-360deg);
     transform: rotate(-360deg);
+  }
+}
+@keyframes rotate-right-left {
+  0%,
+  100% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
   }
 }
